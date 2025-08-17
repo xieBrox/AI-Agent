@@ -164,7 +164,7 @@ cd ERNIE-4.5-VL-Local-Deployment-Tutorial
 
 - **仓库维护者**：xieBrox
 - **问题追踪**：使用GitHub Issues提交问题或疑问
-- **项目链接**：[ERNIE-AI-Applications](https://github.com/xieBrox/ERNIE-AI-Applications)
+- **项目链接**：[ERNIE-AI-Applications](https://github.com/xieBrox/ERNIE-AI-Agent-Applications)
 
 ---
 
