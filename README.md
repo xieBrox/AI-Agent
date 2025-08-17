@@ -164,7 +164,7 @@ This project is licensed under the [Apache 2.0 License](LICENSE). You are free t
 
 - **Repository Maintainer**: xieBrox
 - **Issue Tracking**: Use GitHub Issues for questions or problems
-- **Project Link**: [ERNIE-AI-Applications](https://github.com/xieBrox/ERNIE-AI-Agent-Applications)
+- **Project Link**: [ERNIE-AI-Agent-Applications](https://github.com/xieBrox/ERNIE-AI-Agent-Applications)
 
 ---
 
