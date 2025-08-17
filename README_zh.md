@@ -1,4 +1,4 @@
-# ERNIE AI 应用集
+# ERNIE-AI-Agent
 
 <div align="center">
   <a href="README_zh.md">
