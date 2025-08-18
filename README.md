@@ -66,6 +66,23 @@ A comprehensive tutorial for deploying ERNIE-4.5-VL (Vision-Language) model loca
 | Environment Configuration | Hardware optimization guidance | GPU acceleration and resource management tips |
 | Practical Examples | Sample inference code | Demos for image description, visual question answering, etc. |
 
+### 🔖 PPOCR-invoice-automation (`PPOCR-invoice-automation/`)
+An intelligent invoice processing system integrating PPOCR (Baidu's OCR toolkit) and ERNIE, enabling automated extraction, verification, and structured storage of invoice information.
+
+| Core Function | Technical Implementation | Key Features |
+|---------------|--------------------------|--------------|
+| Invoice Recognition | PPOCR + image preprocessing | High-precision extraction of text from various invoice types (fapiao, receipt, etc.) |
+| Information Structuring | ERNIE-based NLP | Converts unstructured text to structured data (amount, date, payer, item details) |
+| Data Validation | Rule engine + ERNIE reasoning | Verifies logical consistency (e.g., amount format, date validity) |
+| Batch Processing | Asynchronous task queue | Supports bulk invoice processing with progress tracking |
+| Export Function | Multi-format output | Generates Excel/JSON reports for financial systems integration |
+
+**Key Files**:
+- `invoice_processor.py`: OCR recognition and text extraction pipeline
+- `ernie_validator.py`: ERNIE-based information verification and correction
+- `data_exporter.py`: Structured data export to various formats
+- `main.py`: Command-line interface for batch processing
+
 ## 🛠️ Tech Stack
 
 | Category | Components | Description |
