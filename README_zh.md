@@ -11,17 +11,19 @@
 
 <br>
 
-> 基于ERNIE大模型的实用应用集合，涵盖医疗AI代理、检索增强生成（RAG）和多模态模型部署。
+> 基于ERNIE大模型的实用应用集合，涵盖医疗AI代理、检索增强生成（RAG）、多模态模型部署及发票自动化处理。
 
 ## 🌟 项目概述
 
-本仓库专注于**ERNIE大模型应用开发**，提供三个端到端的实战项目，帮助开发者掌握ERNIE在实际场景中的落地方法。依托ERNIE在中文理解、多模态处理和知识融合方面的优势，这些项目展示了如何构建具有产业价值的智能系统。
+本仓库专注于**ERNIE大模型应用开发**，提供四个端到端的实战项目，帮助开发者掌握ERNIE在实际场景中的落地方法。依托ERNIE在中文理解、多模态处理和知识融合方面的优势，这些项目展示了如何构建具有产业价值的智能系统。
 
 ### 🎯 你将学到
 - **多模态应用**：处理医疗场景中的文本和图像输入
 - **知识增强**：结合向量数据库构建检索增强生成系统
 - **本地部署**：离线部署ERNIE-4.5-VL（视觉-语言）模型
+- **OCR+LLM集成**：利用PPOCR与ERNIE实现发票自动化处理
 - **实用工具**：集成Gradio界面、ChromaDB和多代理架构
+
 
 ## 📁 项目集合
 
@@ -41,6 +43,7 @@
 - `knowledge_base.py`：基于ChromaDB的医疗知识存储与检索
 - `main.gradio.py`：用户友好的可视化界面
 
+
 ### 🔍 RAG教程（`RAG-Tutorial/`）
 基于ERNIE构建检索增强生成系统的分步指南，重点关注文档处理和知识检索。
 
@@ -56,6 +59,7 @@
 - `chroma_builder.py`：向量数据库操作（数据加载、查询、统计）
 - `requirements.txt`：文档处理和数据库管理的依赖项
 
+
 ### 🖼️ ERNIE-4.5-VL本地部署（`ERNIE-4.5-VL-Local-Deployment-Tutorial/`）
 ERNIE-4.5-VL（视觉-语言）模型本地部署的综合教程，无需依赖云服务即可实现多模态应用。
 
@@ -65,6 +69,7 @@ ERNIE-4.5-VL（视觉-语言）模型本地部署的综合教程，无需依赖�
 | 多模态处理 | 图文联合理解 | 支持图像输入（Base64编码）和跨模态任务 |
 | 环境配置 | 硬件优化指南 | GPU加速和资源管理技巧 |
 | 实战示例 | 推理示例代码 | 图像描述、视觉问答等场景演示 |
+
 
 ### 🔖 PPOCR发票自动化处理（`PPOCR-invoice-automation/`）
 集成PPOCR（百度OCR工具包）与ERNIE的智能发票处理系统，实现发票信息的自动提取、验证和结构化存储。
@@ -83,17 +88,20 @@ ERNIE-4.5-VL（视觉-语言）模型本地部署的综合教程，无需依赖�
 - `data_exporter.py`：结构化数据多格式导出
 - `main.py`：批量处理的命令行接口
 
+
 ## 🛠️ 技术栈
 
 | 类别 | 组件 | 说明 |
 |------|------|------|
 | **核心模型** | ERNIE系列 | ERNIE大语言模型（文本理解、多模态处理） |
 | **向量数据库** | ChromaDB | 知识存储与相似度搜索 |
+| **OCR工具** | PPOCR | 百度OCR工具包，用于从图像中提取文本 |
 | **交互界面** | Gradio | 用于用户交互的可视化界面 |
 | **后端服务** | FastAPI/UVicorn | 模型交互的API服务部署 |
 | **文本处理** | jieba | 用于token计数的中文分词工具 |
 | **图像处理** | Pillow、Base64 | 图像编码与预处理 |
 | **开发工具** | OpenAI Client | 兼容ERNIE模型调用的接口 |
+
 
 ## 🚀 快速开始
 
@@ -101,6 +109,7 @@ ERNIE-4.5-VL（视觉-语言）模型本地部署的综合教程，无需依赖�
 - **Python**：3.8+
 - **依赖项**：参见各项目的`requirements.txt`
 - **可选**：具有足够显存的GPU（用于本地模型部署）
+
 
 ### 安装步骤
 
@@ -117,10 +126,15 @@ pip install -r requirements.txt
 cd ../RAG-Tutorial
 pip install -r requirements.txt
 
+# 安装PPOCR-invoice-automation依赖
+cd ../PPOCR-invoice-automation
+pip install -r requirements.txt
+
 # 部署ERNIE-4.5-VL（参考项目内教程）
 cd ../ERNIE-4.5-VL-Local-Deployment-Tutorial
 # 按照教程进行模型下载和环境配置
 ```
+
 
 ### 运行项目
 
@@ -147,6 +161,16 @@ cd ERNIE-4.5-VL-Local-Deployment-Tutorial
 # 按照教程启动本地服务
 ```
 
+4. **PPOCR发票自动化处理**
+```bash
+cd PPOCR-invoice-automation
+# 处理单张发票
+python main.py --file path/to/invoice.jpg
+# 批量处理文件夹中的发票
+python main.py --folder path/to/invoice_folder --output results.xlsx
+```
+
+
 ## 📊 项目特点
 
 | 特点 | 说明 |
@@ -157,6 +181,7 @@ cd ERNIE-4.5-VL-Local-Deployment-Tutorial
 | **详细日志** | 完善的日志系统，方便调试和性能分析 |
 | **易用性** | Gradio界面和详细注释降低使用门槛 |
 
+
 ## 🤝 贡献指南
 
 我们欢迎任何形式的贡献来改进这些项目！贡献方式包括：
@@ -165,6 +190,7 @@ cd ERNIE-4.5-VL-Local-Deployment-Tutorial
 - 💡 提出ERNIE应用的新功能或改进建议
 - 📝 完善文档或添加教程
 - 🔧 提交代码改进（如优化、新功能）
+
 
 ### 贡献流程
 1. Fork本仓库
